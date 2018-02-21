@@ -12,16 +12,16 @@ class MainActivity : BaseActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
     val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-    binding.navigation.navigation.setOnNavigationItemSelectedListener { item ->
+    binding.navigation.setOnNavigationItemSelectedListener { item ->
       when (item.itemId) {
         R.id.navigation_home -> {
-          message.setText(R.string.title_home)
+          binding.message.setText(R.string.title_home)
         }
         R.id.navigation_dashboard -> {
-          message.setText(R.string.title_dashboard)
+          binding.message.setText(R.string.title_dashboard)
         }
         R.id.navigation_notifications -> {
-          message.setText(R.string.title_notifications)
+          binding.message.setText(R.string.title_notifications)
         }
       }
       false
